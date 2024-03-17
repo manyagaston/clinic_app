@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Liste des Docteurs</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <br><br>
+    <a href="{% url 'list_age'%}">  <button type="button" class="btn btn-danger">retour</button> </a>   
+    <br><br>
+    <h2>Liste des Docteurs</h2>
+  
+  <table class="table">
+    
+    <thead>
+      <tr>
+        <th>Matricule</th>
+        <th>Nom</th>
+        <th>Postnom</th>
+        <th>Prenom</th>
+        <th>Sexe</th>
+        <th>Email</th>
+        <th>Téléphone</th>
+      </tr>
+    </thead>
+    {% for docteur in object_list %}
+    <tbody>
+      <tr>
+        <td>{{ docteur.matricule }}</td>
+        <td>{{ docteur.nom }}</td>
+        <td>{{ docteur.post_nom }}</td>
+        <td>{{ docteur.prenom }}</td>
+        <td>{{ docteur.sexe }}</td>
+        <td>{{ docteur.email }}</td>
+        <td>{{ docteur.telephone }}</td>
+      </tr>
+    </tbody>
+    {% endfor %}
+  </table>
+
+ <a href="{% url 'add_docteur'%}">  <button type="button" class="btn btn-primary">Ajouter un infirmier</button> </a>
+</div>
+
+</body>
+</html>

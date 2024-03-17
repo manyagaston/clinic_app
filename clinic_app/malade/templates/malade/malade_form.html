@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Ajouter un Docteur</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+     <br><br>
+    <a href="{% url 'list'%}">  <button type="button" class="btn btn-danger">retour</button> </a>   
+    <br><br>
+  <h2>Ajouter un Docteur</h2>
+  <form action="" method="POST">
+       
+        <div class="form-group"> 
+            {% csrf_token %}
+        {{form.as_p}}
+     </div>
+  
+    
+    <button type="submit" value="SUBMIT" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+</body>
+</html>
